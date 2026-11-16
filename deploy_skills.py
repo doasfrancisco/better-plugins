@@ -1,4 +1,4 @@
-"""Deploy skills from skills/ to Claude, Droid, and the shared agents skill folder."""
+"""Deploy skills from skills/ to Claude, Droid, Grok, and the shared agents skill folder."""
 
 import argparse
 import os
@@ -10,6 +10,7 @@ SKILLS_SRC = Path(__file__).parent / "skills"
 DESTINATIONS = {
     "claude": Path.home() / ".claude" / "skills",
     "droid": Path.home() / ".factory" / "skills",
+    "grok": Path.home() / ".grok" / "skills",
     "shared": Path.home() / ".agents" / "skills",
 }
 
@@ -121,7 +122,7 @@ def remove_skills(names: list[str]):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Deploy skills to Claude, Droid, and the shared agents skill folder.")
+    parser = argparse.ArgumentParser(description="Deploy skills to Claude, Droid, Grok, and the shared agents skill folder.")
     parser.add_argument("--add", nargs="+", metavar="SKILL", help="Deploy one or more skills")
     parser.add_argument("--all", action="store_true", help="Deploy all skills")
     parser.add_argument("--diff", metavar="SKILL", help="Show what would change without deploying")

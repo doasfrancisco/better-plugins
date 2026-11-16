@@ -1,10 +1,10 @@
 # Skills
 
-How to build and deploy Claude Code and Droid skills in this repo.
+How to build and deploy Claude Code, Droid, and Grok skills in this repo.
 
 ## What is a skill?
 
-A skill is a folder with a `SKILL.md` file that teaches Claude Code or Droid how to do something specific. When the user types `/skill-name`, the agent reads the SKILL.md and follows its instructions.
+A skill is a folder with a `SKILL.md` file that teaches Claude Code, Droid, or Grok how to do something specific. When the user types `/skill-name`, the agent reads the SKILL.md and follows its instructions.
 
 ## Structure
 
@@ -64,10 +64,12 @@ For credits, source links, or context that isn't part of the skill instructions.
 ## Deploying
 
 Skills are developed here in `skills/` and deployed with `deploy_skills.py`.
-The deploy script installs them to both:
+The deploy script installs them to:
 
 - `~/.claude/skills/`
 - `~/.factory/skills/`
+- `~/.grok/skills/`
+- `~/.agents/skills/`
 
 ```bash
 # Deploy one or more skills
@@ -84,7 +86,7 @@ python deploy_skills.py --diff my-skill
 python deploy_skills.py --list
 ```
 
-After deploying, the skill is immediately available as `/my-skill` in Claude Code and Droid sessions.
+After deploying, the skill is immediately available as `/my-skill` in Claude Code, Droid, and Grok sessions.
 
 ## Tips
 
